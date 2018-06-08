@@ -22,6 +22,14 @@ function apiCall(pokeURL) {
     success: function(data) { //put a real function call in here
       var test = data.name;
       console.log(test);
+      $('.display').html(`<h1>${data.name}</h1>`);
+      //lookup what a template literal is
+
+      /* callback. when you call the original apiCall function, you can put two arguments
+      one being the URL variable and one being the callback function
+      that function can take the data as a success: callback and then
+      do shit with it so its not here cluttering things up
+      */
 
     }
   };
@@ -30,14 +38,6 @@ function apiCall(pokeURL) {
   $.ajax(pokemonResult);
 }
 
-function editHTML() {
-
-}
-
-function testFunction(data){
-  var test = data.name;
-  console.log(test);
-}
 //this is a new event listener using jquery
 /* function submit() {
   $(.'form').submit(event => {
