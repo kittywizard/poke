@@ -4,10 +4,9 @@ var pokeResult; //junk variable probably
 //event listener for the button to grab search results
 var searchForPoke = document.getElementById('search').addEventListener('click', function() {
   pokeResult = document.getElementById('pokemonSearch').value;
-
-  console.log(pokeResult);
+  //console.log(pokeResult);
   var pokeURL = "https://pokeapi.co/api/v2/pokemon/" + pokeResult + "/";
-  console.log(pokeURL);
+  //console.log(pokeURL);
   apiCall(pokeURL);
 
 });
@@ -22,8 +21,13 @@ function apiCall(pokeURL) {
     success: function(data) { //put a real function call in here
       var test = data.name;
       console.log(test);
-      $('.display').html(`<h1>${data.name}</h1>`);
+      $('.display').html(`<h1>${data.name}</h1>
+        <p>${data.types}</p>
+        `);
+
       //lookup what a template literal is
+      //it allows you to use `` and put in expressions, it's not jquery despite the $$ bullshit
+
 
       /* callback. when you call the original apiCall function, you can put two arguments
       one being the URL variable and one being the callback function
