@@ -37,28 +37,8 @@ function apiCall(pokeURL, callback) {
 
 //function to serve as the apiCall's callback
 function editPage(data) {
-      var test = data.name;
-      console.log(test);
       $('.display').html(`<h1>${data.name}</h1>
         <p>${data.id}</p>
         `);
 }
 
-//this is a new event listener using jquery
-/* function submit() {
-  $(.'form').submit(event => {
-    event.preventDefault();
-    const queryTarget = $(event.currentTarget).find('#pokemonSearch');
-    const query = queryTarget.val();
-
-  });
-}
-$(submit); */
-/*
-var url = "https://pokeapi.co/api/v2/pokemon/25";
-
-$.getJSON(url, function(data) {
-  var name = data.name;
-  console.log(name);
-});
-*/
