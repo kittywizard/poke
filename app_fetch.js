@@ -16,8 +16,16 @@ function getPokemon() {
 function displayPokemon(data) {
     console.log(data);
 
-    let display = data.name;
+    let display = `Name: ${data.name} <br>
+                    ID: ${data.id} <br>
+                    Abilities: <ul>`;
 
+    // display += `Abilities #: ${data.abilities.length} `;
+  data.abilities.forEach(element => {
+        console.log(element.ability.name);
+        display += ` <li>${element.ability.name} </li>`;
+    });
+    display += `</ul>`;
     document.querySelector('div').innerHTML = display;
 
     
