@@ -14,6 +14,12 @@ function getPokemon() {
     }
 
 function displayPokemon(data) {
-    console.log("working?");
+    console.log(data);
+
+    let display = data.name;
+
+    document.querySelector('div').innerHTML = display;
+
+    
 }
 
