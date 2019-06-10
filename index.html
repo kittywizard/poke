@@ -9,13 +9,20 @@
 <body>
   <main>
     <form class='form' action='#'>
-        <label id='whatPoke'>Which Pokemon?</label>
-        <input id='pokemonSearch'></input>
-        <button id='search' type='button'>Search</button>
+      <div class="row">
+        <div class="three columns">
+            <label id='whatPoke'>Which Pokemon?</label>
+            <input type="text" id='pokemonSearch' class="u-full-width" placeholder="Jigglypuff"></input>
+            <button id='search' type='button' class="button-primary">Search</button>
+        </div>
+      
+      </div>
     </form>
+    <div class="row content">
 
-    <div class="display">
-    
+    </div>
+    <div id="display">
+      
     </div>
 
   </main>

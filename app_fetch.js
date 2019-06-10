@@ -14,20 +14,25 @@ function getPokemon() {
     }
 
 function displayPokemon(data) {
-    console.log(data);
 
     let display = `Name: ${data.name} <br>
                     ID: ${data.id} <br>
                     Abilities: <ul>`;
 
-    // display += `Abilities #: ${data.abilities.length} `;
   data.abilities.forEach(element => {
-        console.log(element.ability.name);
         display += ` <li>${element.ability.name} </li>`;
-    });
+     });
     display += `</ul>`;
-    document.querySelector('div').innerHTML = display;
-
+    
+    document.getElementById('display').innerHTML = display;
+    
     
 }
 
+/* some garbage div creation
+    let newDiv = document.createElement('div');
+    newDiv.className = "three columns";
+    newDiv.appendChild(document.createTextNode(display));
+    let contentGoesHere = document.querySelector('.content');
+    contentGoesHere.appendChild(newDiv);
+*/
