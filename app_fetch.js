@@ -3,6 +3,13 @@ document.getElementById('search').addEventListener('click', getPokemon);
 
 function getPokemon() {
     const pokemon = document.getElementById('pokemonSearch').value.toLowerCase();
+        
+        //error check
+        if(pokemon === ''){
+            let display = `Please enter a valid Pokemon name.`;
+            document.getElementById('display').innerHTML = display;
+            return;
+        }
 
         return new Promise((resolve, reject) => {
             fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
