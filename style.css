@@ -1,13 +1,10 @@
 body {
-    background-color: #ccc;
     font-family: Helvetica, sans-serif;
     color: black;
+
 }
-button {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #999;
-    
+
+.headline {
     font-weight: bold;
-    padding: 0.23em;
-    border: 1px solid black;
+    color: rgba(102,177,180,0.7);
 }
