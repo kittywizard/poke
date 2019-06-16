@@ -1,6 +1,15 @@
 
 document.getElementById('search').addEventListener('click', getPokemon);
 
+function get(url) {
+    return new Promise((resolve, reject) => {
+        fetch(url)
+        .then(res => res.json())
+        .then(data => resolve(displayPokemon(data)))
+        .catch(err => reject(err));
+    });
+}
+
 function getPokemon() {
     const pokemon = document.getElementById('pokemonSearch').value.toLowerCase();
         
@@ -11,13 +20,7 @@ function getPokemon() {
             return;
         }
 
-        return new Promise((resolve, reject) => {
-            fetch(`https://pokeapi.co/api/v2/pokemon/${pokemon}`)
-            .then(res => res.json())
-            .then(data => resolve(displayPokemon(data)))
-            .catch(err => reject(err));
-        });
-
+        get(`https://pokeapi.co/api/v2/pokemon/${pokemon}`);
     }
 
 function displayPokemon(data) {
@@ -35,8 +38,8 @@ function displayPokemon(data) {
     display += `</ul>`;
     
     document.getElementById('display').innerHTML = display;
-    
-    
+
+
 }
 
 function convertName(name) {
