@@ -25,7 +25,9 @@ function getPokemon() {
 
 function displayPokemon(data) {
     
-    const pokeName = convertName(data.name);    
+    const pokeName = convertName(data.name); 
+    
+    console.log(data.sprites.front_default);
 
     let display = `<span class="headline">Name:</span> ${pokeName} <br>
                     <span class="headline">ID:</span> ${data.id} <br>
@@ -36,9 +38,11 @@ function displayPokemon(data) {
         display += ` <li>${eleName}</li>`;
      });
     display += `</ul>`;
-    
-    document.getElementById('display').innerHTML = display;
 
+    let image = `<img src="${data.sprites.front_default}">`;
+
+    document.getElementById('display').innerHTML = display;
+    document.getElementById('image').innerHTML = image;
 
 }
 
