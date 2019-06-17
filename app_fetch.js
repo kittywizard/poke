@@ -31,7 +31,9 @@ function displayPokemon(data) {
 
     // an array inside an array
     console.log(data.moves[0].move.name);
-
+    for (let i = 0; i <= 4; i++) {
+        display += `<li> ${data.moves[i].move.name}</li>`;
+    }
     
 //   for (let i = 0; i <= 4; i++) {
 //     display += `<li> ${data.moves[i].name} </li>`;
